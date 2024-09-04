@@ -38,6 +38,7 @@ public class TicketService {
     }
 
     public Ticket resolveTicket(Long ticketId) {
+        System.out.println("demo");
         Ticket ticket = Ticketrepo.findById(ticketId).orElseThrow();
         ticket.setStatus("raised");
         ticket.setResolvedAt(LocalDateTime.now());
