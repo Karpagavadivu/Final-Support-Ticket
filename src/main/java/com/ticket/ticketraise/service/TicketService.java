@@ -44,7 +44,7 @@ public class TicketService {
         return Ticketrepo.save(ticket);
     }
 
-    public customerInfo getInfoFromCustomerInfo(Long customerId) {
+    public customerInfo getInfoFromCustomerInfo(Long customerId) { //Rest Template
         String customerServiceUrl = "http://localhost:8082/api/customers/" + customerId;
         customerInfo info =restTemplate.getForObject(customerServiceUrl, customerInfo.class);
          if (info!=null){ 
